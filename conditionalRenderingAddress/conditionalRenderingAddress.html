@@ -1,0 +1,36 @@
+<template>
+    <lightning-card title="Address Information" class="slds-card__body_inner">
+     
+        <lightning-layout >
+       
+            <lightning-layout-item size="6" padding="around-medium">
+                <div style="color:cornflowerblue;font-size:large;font-weight:bold">Permanent Address                
+                </div>
+                <p>Enter permanent address as per govt Id Proof</p>  <br>              
+                <div style="color:cornflowerblue;">Address Line 1</div>
+                <lightning-input label="Address Line 1"  type="text" variant="label-hidden" name="p1" value={paddr1}></lightning-input><br>
+                <div style="color:cornflowerblue;">Address Line 2</div>
+                <lightning-input label="Address Line 2"  type="text" variant="label-hidden" name="p2" value={paddr2}></lightning-input><br>
+                <div style="color:cornflowerblue;">Landmark </div>
+                <lightning-input label="Landmark" type="text" variant="label-hidden" name="p3" value={paddr3}></lightning-input><br>
+                <div style="color:cornflowerblue;">Zip code </div>
+                <lightning-input label="Zip code"  type="text" variant="label-hidden" max-length="7" name="p4" value={paddr4} pattern="[0-9]{7}" message-when-pattern-mismatch="Enter only numbers"></lightning-input>  <br>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="6" padding="around-medium">
+                <div style= "color:cornflowerblue;font-size:large;; font-weight:bold">
+                    Current Address                     
+                </div>
+                <lightning-input type="checkbox" label="Same as permanent address" name="cbox" onchange={copyAddress}></lightning-input><br>
+                <div style="color:cornflowerblue;">Address Line 1</div>
+                <lightning-input label="Address Line 1"  type="text" variant="label-hidden" value={caddr1}></lightning-input> <br>
+                <div style="color:cornflowerblue;">Address Line 2</div>
+                <lightning-input label="Address Line 2"  type="text" variant="label-hidden" value={caddr2}></lightning-input><br>
+                <div style="color:cornflowerblue;">Landmark </div>
+                <lightning-input label="Landmark" type="text" variant="label-hidden" value={caddr3}></lightning-input><br>
+                <div style="color:cornflowerblue;">Zip code </div>
+                <lightning-input label="Zip code"  type="text" variant="label-hidden" max-length="7" value={caddr4} pattern="[0-9]{7}" message-when-pattern-mismatch="Enter only numbers"></lightning-input>
+            </lightning-layout-item>                               
+        </lightning-layout>
+    </lightning-card>
+</template>
